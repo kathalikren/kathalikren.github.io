@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Katharina Alicia Krenzer – M.Sc. Statistics at ETH Zürich. Clinical AI that knows when to ask: mixed-initiative systems where a model and a clinician share the decision.">
+<meta property="og:title" content="Katharina Alicia Krenzer">
+<meta property="og:description" content="Clinical AI that knows when to ask. M.Sc. Statistics, ETH Zürich.">
+<meta property="og:image" content="portrait.jpg">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Katharina Alicia Krenzer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap">
+<style>
+/* Layout: soft, warm sand pages with plum accents; bold-plus-light headlines; generous pill buttons and 38px cards. Two sticky scrollytelling scenes. */
+:root {
+  --bg: #eae3d5;
+  --bg-alt: #f3eee4;
+  --card: #f7f3ec;
+  --ink: #202020;
+  --text: #3a3a3a;
+  --muted: #7d746a;
+  --line: #d9cfbf;
+  --plum: #83343d;
+  --plum-deep: #5e252c;
+  --mauve: #9e4a53;
+  --mauve-soft: #efdcd8;
+  --link: #83343d;
+  --heart: #83343d;
+  --calm: #a89a86;
+  --flag: #c8a97e;
+  --band: rgba(158, 74, 83, 0.14);
+  --on-dark: #f3eee4;
+  --on-dark-muted: #c7bccd;
+  --dark-card: #4a3c52;
+  --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; border-radius: 6px; }
+b, strong { font-weight: 700; color: var(--ink); }
+
+.band { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.inner { max-width: 1120px; margin: 0 auto; }
+.narrow { max-width: 760px; margin: 0 auto; }
+.center { text-align: center; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin: 0 0 18px; }
+.eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--mauve); }
+h1, h2, h3 { text-wrap: balance; margin: 0; color: var(--ink); }
+.display, .headline { font-weight: 300; letter-spacing: -0.035em; }
+.display b, .headline b { font-weight: 700; }
+.display { font-size: clamp(24px, 6.2vw, 52px); line-height: 1.06; white-space: nowrap; }
+.headline { font-size: clamp(32px, 4.6vw, 52px); line-height: 1.1; }
+.sub { font-size: clamp(18px, 1.9vw, 20px); color: var(--text); line-height: 1.55; margin: 20px 0 0; max-width: 34em; text-wrap: pretty; }
+.center .sub { margin-left: auto; margin-right: auto; }
+.grad { color: var(--plum); }
+
+/* Buttons */
+.btn { display: inline-block; font: 600 15px var(--sans); padding: 15px 28px; border-radius: 100px; border: 1px solid var(--mauve); background: var(--mauve); color: #fff; cursor: pointer; text-decoration: none !important; }
+.btn:hover { background: var(--plum); border-color: var(--plum); color: #fff; }
+.btn.dark { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.btn.ghost { background: rgba(255,255,255,0.35); color: var(--ink); border-color: rgba(255,255,255,0.7); }
+.btn.ghost:hover { background: var(--card); color: var(--ink); border-color: var(--line); }
+
+/* Nav + fact strip */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--bg); }
+.nav .inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 60px; }
+.nav strong { font-size: 18px; font-weight: 700; letter-spacing: -0.03em; white-space: nowrap; }
+.nav strong span { font-weight: 300; }
+.nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; font-size: 14px; font-weight: 500; }
+.nav ul a { color: var(--ink); white-space: nowrap; }
+.facts { background: var(--bg-alt); color: var(--ink); border-bottom: 1px solid var(--line); }
+.facts .inner { display: flex; justify-content: center; flex-wrap: wrap; }
+.facts div { padding: 10px 34px; text-align: center; font-size: 12.5px; line-height: 1.35; color: var(--muted); }
+.facts div + div { border-left: 1px solid var(--line); }
+.facts b { display: block; color: var(--ink); font-size: 14px; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; background: var(--bg); min-height: min(560px, 80svh); display: flex; align-items: center; padding-block: 72px; }
+.hero .inner { position: relative; z-index: 2; width: 100%; }
+.hero .copy { max-width: 740px; }
+.hero .copy .sub { max-width: 32em; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.hero-cta .btn { padding: 10px 22px; font-size: 14.5px; }
+.portrait { position: absolute; z-index: 1; top: 12%; right: max(4vw, calc((100% - 1120px) / 2 - 40px)); bottom: 6%; width: min(30%, 360px); margin: 0; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 82%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 82%, transparent 100%); }
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; display: block; filter: sepia(0.15) saturate(0.95); }
+.portrait::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 85%, transparent) 14%, color-mix(in srgb, var(--bg) 30%, transparent) 36%, transparent 55%, transparent 78%, color-mix(in srgb, var(--bg) 60%, transparent) 90%, var(--bg) 100%); }
+.portrait::after { content: ""; position: absolute; inset: auto 0 0 0; height: 28%; z-index: 1; background: linear-gradient(180deg, transparent, var(--bg)); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 28px; }
+.chips span { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--ink); }
+.chips span::before { content: ""; width: 22px; height: 22px; border-radius: 50%; background: var(--mauve-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='11' fill='%239e4a53'/%3E%3Cpath d='M6.5 11.3l3 3 6-6.3' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/cover; }
+
+/* Quote chapter */
+.quote { padding-block: 120px; background: var(--card); color: var(--ink); }
+.quote blockquote { margin: 0; font-size: clamp(30px, 4.4vw, 52px); font-weight: 300; line-height: 1.15; letter-spacing: -0.03em; text-wrap: balance; color: var(--ink); }
+.quote cite { display: block; margin-top: 22px; font-style: normal; color: var(--plum); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; }
+.quote p.after { margin: 56px auto 0; max-width: 30em; font-size: clamp(20px, 2.3vw, 25px); line-height: 1.45; color: var(--text); font-weight: 400; }
+.quote p.after b { color: var(--ink); }
+
+/* Scrollytelling */
+.scene { padding-block: 110px 40px; }
+.scene-head { margin-bottom: 48px; }
+.story { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 48px; }
+.steps { display: grid; padding-bottom: 30vh; }
+.step { min-height: 72vh; display: flex; align-items: center; }
+.step .card { background: var(--card); border-radius: 30px; padding: 30px 32px; max-width: 430px; transition: opacity .4s, transform .4s; }
+.step .card h3 { font-size: 23px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.25; }
+.step .card p { margin: 0; color: var(--text); }
+.step .card .k { font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: block; }
+.step .card { transition: opacity .25s linear; }
+.stage { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 84px); height: calc(100svh - 120px); max-height: 640px; display: flex; align-items: center; min-width: 0; }
+.panel { width: 100%; background: var(--card); border-radius: 38px; padding: 26px; position: relative; overflow: hidden; }
+.panel-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.panel-top b { font-size: 17px; }
+svg.chart { width: 100%; height: auto; display: block; overflow: visible; }
+svg text { fill: var(--muted); font-family: var(--sans); font-size: 11px; }
+.fade { transition: opacity .6s ease, transform .6s ease; }
+[data-from] { opacity: 0; }
+[data-from].on { opacity: 1; }
+.bubble { position: absolute; max-width: 78%; font-size: 14px; line-height: 1.4; padding: 11px 15px; border-radius: 20px; transform: translateY(8px); }
+.bubble.on { transform: none; }
+.bubble.ai { left: 26px; bottom: 80px; background: var(--mauve-soft); color: var(--ink); border-bottom-left-radius: 6px; }
+.bubble.pt { right: 26px; bottom: 28px; background: var(--plum); color: var(--bg); border-bottom-right-radius: 6px; }
+.bubble.doc { right: 26px; top: 60px; background: var(--bg); color: var(--ink); box-shadow: 0 16px 40px -18px rgba(110,47,55,.35); }
+.bubble small { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+.bubble.pt small { color: color-mix(in srgb, var(--bg) 75%, transparent); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12.5px; color: var(--muted); margin-top: 10px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+
+/* Stats */
+.stats { padding-block: 110px; background: var(--bg-alt); }
+.stat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 52px; }
+.stat { background: var(--card); border-radius: 38px; padding: 40px 36px; text-align: left; }
+.stat .num { font-size: clamp(64px, 9vw, 112px); font-weight: 300; line-height: 1; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; color: var(--ink); }
+.stat .num.grad { font-weight: 700; color: var(--plum); }
+.stat p { margin: 18px 0 0; color: var(--text); }
+.stat .ref { font-size: 12px; margin-top: 14px; color: var(--muted); letter-spacing: 0.04em; }
+
+/* Arms */
+.arms { position: relative; }
+.arms-pin { padding-block: 110px; }
+.arm-track { position: relative; height: 20px; margin: 44px 0 -30px; }
+.arm-track::before { content: ""; position: absolute; left: 0; right: 0; top: 9px; border-top: 1px solid var(--line); }
+.arm-dot { position: absolute; top: 4px; left: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--plum); box-shadow: 0 0 0 4px var(--bg); transform: translateX(-50%); }
+@media (min-width: 761px) and (min-height: 700px) {
+  .arms { height: 300vh; }
+  .arms-pin { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 60px); min-height: calc(100vh - 60px); display: flex; align-items: center; padding-block: 32px; }
+  .arms-pin .inner { width: 100%; }
+}
+@media (max-width: 760px) { .arm-track { display: none; } }
+.arm-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 52px; text-align: left; }
+.arm { border-radius: 30px; padding: 26px; background: var(--card); display: grid; gap: 8px; align-content: start; transition: box-shadow .35s ease; }
+.arm.on { box-shadow: inset 0 0 0 1.5px var(--plum); }
+.arm.on .lbl { color: var(--plum); }
+.arm .lbl { font-size: 11.5px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.18em; }
+.arm h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.015em; }
+.arm p { margin: 0; font-size: 15px; color: var(--text); }
+.arm.hl { background: var(--card); box-shadow: inset 0 0 0 1.5px var(--plum); }
+.arm.hl .lbl { color: var(--plum); }
+
+/* Page dot: one small red dot that travels with the reader */
+.rail { position: fixed; z-index: 15; left: max(8px, calc((100vw - 1120px) / 4), calc(env(safe-area-inset-left, 0px) + 8px)); top: 24vh; bottom: 24vh; width: 1px; background: var(--line); transition: opacity .3s ease; pointer-events: none; }
+.rail-dot { position: absolute; left: 50%; top: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--plum); box-shadow: 0 0 0 3px var(--bg); transform: translate(-50%, -50%); }
+.rail.hide { opacity: 0; }
+@media (max-width: 760px) { .rail { left: 6px; } }
+.note { margin: 40px auto 0; max-width: 42em; font-size: 15px; color: var(--muted); text-align: center; }
+
+/* Abilities */
+.abilities { padding-block: 110px; background: var(--bg-alt); color: var(--ink); }
+
+
+
+.ab-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 56px; }
+.ab { background: var(--card); border-radius: 30px; padding: 32px 28px; display: grid; gap: 10px; align-content: start; }
+.ab .verb { font-size: 26px; font-weight: 300; letter-spacing: -0.025em; line-height: 1.2; color: var(--ink); }
+.ab .verb span { display: block; font-size: 11.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; color: var(--plum); }
+.ab h4 { margin: 10px 0 0; font-size: 15px; font-weight: 700; color: var(--ink); }
+.ab p { margin: 0; font-size: 15px; color: var(--text); }
+
+/* Timeline */
+.work { padding-block: 110px; background: var(--bg); }
+.tl { list-style: none; margin: 48px 0 0; padding: 0; display: grid; }
+.tl li { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 24px; padding-block: 24px; border-top: 1px solid var(--line); }
+.tl li:last-child { border-bottom: 1px solid var(--line); }
+.tl .when { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.tl h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.015em; }
+.tl .org { color: var(--muted); font-size: 15px; margin-top: 2px; }
+.tl p { margin: 6px 0 0; font-size: 15px; max-width: 60ch; }
+.pubs { display: grid; gap: 16px; margin-top: 40px; }
+.pub { background: var(--card); border-radius: 30px; padding: 26px 30px; }
+.pub .venue { font-size: 11.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.pub h3 { font-size: 19px; font-weight: 700; margin-top: 8px; letter-spacing: -0.015em; }
+.pub p { margin: 6px 0 0; font-size: 14px; color: var(--muted); }
+.sec-title { font-size: clamp(28px, 3.6vw, 40px); font-weight: 300; letter-spacing: -0.03em; margin-top: 88px; }
+.sec-title b { font-weight: 700; }
+
+/* People */
+.people { padding-block: 110px; }
+.people-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.photo { border-radius: 38px; overflow: hidden; aspect-ratio: 3 / 4; max-width: 100%; }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.people-copy { min-width: 0; display: grid; gap: 18px; }
+.people-copy p { margin: 0; font-size: 18px; color: var(--text); }
+.caption { font-size: 13px; color: var(--muted); margin-top: 12px; }
+.hobbies { display: flex; flex-wrap: wrap; gap: 8px; }
+.hobbies span { font-size: 14px; font-weight: 500; padding: 8px 16px; border-radius: 100px; background: var(--card); color: var(--ink); }
+
+/* Wellbeing */
+.wellbeing { padding-block: 110px; background: var(--bg-alt); }
+.well-grid { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 56px; align-items: center; }
+.well-copy { min-width: 0; display: grid; gap: 18px; }
+.well-copy p { margin: 0; font-size: 18px; }
+.well-copy .eyebrow { margin: 0; }
+.well-photos { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+.wp { margin: 0; }
+.wp img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 30px; display: block; max-width: 100%; }
+.wp-b { margin-top: 64px; }
+.wp-a img { object-position: 50% 40%; }
+.wp-b img { object-position: 60% 62%; }
+.wp figcaption { margin-top: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+/* Contact */
+.contact { padding-block: 120px 80px; background: var(--bg); }
+.cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; align-items: center; }
+.addr { font-size: 16px; font-weight: 500; padding: 14px 24px; border-radius: 100px; background: var(--card); user-select: all; color: var(--ink); }
+.refs { margin-top: 80px; font-size: 12px; color: var(--muted); display: grid; gap: 4px; text-align: left; }
+footer { padding-block: 24px; font-size: 13px; color: var(--muted); }
+footer .inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise { transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+  .rise.pre { transform: translateY(24px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade, .step .card, .bubble { transition: none; }
+  html { scroll-behavior: auto; }
+}
+@media (max-width: 900px) {
+  .arm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ab-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .hero { display: block; min-height: 0; padding-block: 0 48px; }
+  .portrait { position: relative; top: auto; right: auto; bottom: auto; width: min(230px, 62vw); height: auto; aspect-ratio: 3 / 4; margin: 8px auto -24px; -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 46%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 50% 50% at 50% 46%, #000 62%, transparent 100%); }
+  .portrait img { object-position: 50% 8%; }
+  .portrait::before { display: none; }
+  .portrait::after { display: none; }
+  .facts .inner { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .facts div { padding: 8px 6px; font-size: 10.5px; }
+  .facts b { font-size: 11.5px; }
+  .story { grid-template-columns: 1fr; gap: 0; }
+  .stage { order: -1; top: calc(env(safe-area-inset-top, 0px) + 60px); height: auto; max-height: none; z-index: 2; padding-block: 8px; background: var(--bg); }
+  .panel { padding: 16px; border-radius: 26px; }
+  .bubble { font-size: 12.5px; max-width: 86%; }
+  .bubble.ai { left: 16px; bottom: 58px; }
+  .bubble.pt { right: 16px; bottom: 16px; }
+  .bubble.doc { right: 16px; top: 46px; }
+  .step { min-height: 60vh; justify-content: center; }
+  .stat-grid { grid-template-columns: 1fr; }
+  .people-grid { grid-template-columns: 1fr; }
+  .well-grid { grid-template-columns: 1fr; gap: 36px; }
+  .wp-b { margin-top: 40px; }
+  .tl li { grid-template-columns: 1fr; gap: 4px; }
+  .nav ul { gap: 18px; }
+  .nav strong { display: none; }
+}
+@media (max-width: 480px) {
+  .arm-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+
+<nav class="nav band" aria-label="Main">
+  <div class="inner">
+    <strong>Katharina Alicia <span>Krenzer</span></strong>
+    <ul>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#people">Beyond</a></li>
+      <li><a href="#wellbeing">Wellbeing</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="Katharina_Alicia_Krenzer_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="rail" aria-hidden="true"><span class="rail-dot"></span></div>
+<div class="facts band" aria-label="At a glance">
+  <div class="inner">
+    <div>Studying<b>M.Sc. Statistics, ETH</b></div>
+    <div>Publications<b>NeurIPS · IEEE VIS workshops</b></div>
+    <div>Working with<b>USZ · Schulthess Klinik</b></div>
+  </div>
+</div>
+
+<header class="hero band">
+  <figure class="portrait" aria-hidden="false"><img src="portrait.jpg" alt="Portrait of Katharina Alicia Krenzer" width="1000" height="1335"></figure>
+  <div class="inner">
+    <div class="copy">
+      <p class="eyebrow">Clinical AI for every patient</p>
+      <h1 class="display"><b>Katharina Alicia</b> Krenzer.</h1>
+      <p class="sub">I build clinical AI that knows when to ask: mixed-initiative systems where a model and a clinician share the decision.</p>
+      <div class="hero-cta"><a class="btn" href="Katharina_Alicia_Krenzer_CV.pdf" target="_blank" rel="noopener">View CV</a><a class="btn ghost" href="#approach">See my approach</a></div>
+      <div class="chips" aria-label="Research interests">
+        <span>Clinical AI agents</span><span>Human–AI collaboration</span><span>Wearable health</span><span>Active learning</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="quote band center" id="vision">
+  <div class="narrow">
+    <blockquote class="rise">“The future is already here. It's just not very evenly distributed.”</blockquote>
+    <cite>William Gibson</cite>
+    <p class="after rise">As a statistician, I take that literally. In medicine, <b>the future is already strapped to millions of wrists.</b> Almost none of it reaches the clinician making the decision.</p>
+  </div>
+</section>
+
+<!-- Scene 1: the gap between visits -->
+<section class="scene band" aria-labelledby="gap-h">
+  <div class="inner">
+    <div class="scene-head center">
+      <p class="eyebrow">The gap</p>
+      <h2 class="headline" id="gap-h"><b>Medicine sees you in moments.</b> Your body lives in between.</h2>
+    </div>
+    <div class="story" data-story="gap">
+      <div class="steps">
+        <div class="step" data-step="0"><div class="card"><span class="k">The record</span><h3>A few snapshots a year.</h3><p>A hospital record captures a patient at the moments they seek care. It reveals little about the months in between.</p></div></div>
+        <div class="step" data-step="1"><div class="card"><span class="k">The wrist</span><h3>A continuous signal.</h3><p>Wearables record how people sleep, move and recover, and how their physiology drifts from their own usual baseline.</p></div></div>
+        <div class="step" data-step="2"><div class="card"><span class="k">The disconnect</span><h3>It rarely reaches the clinic.</h3><p>The challenge is not more data. A change can have many explanations, and both missed problems and false alarms carry a cost.</p></div></div>
+      </div>
+      <div class="stage">
+        <div class="panel" data-figure="gap" data-current="0">
+          <div class="panel-top"><b>One patient, one year</b><span>resting heart rate, bpm</span></div>
+          <svg class="chart" viewBox="0 0 520 300" role="img" aria-labelledby="gap-desc">
+            <desc id="gap-desc">A year-long resting heart rate signal from a wearable, with three clinic visits marked as single points.</desc>
+            <g id="gap-axis"></g>
+            <path id="gap-line" class="fade" data-from="1" fill="none" stroke="var(--heart)" stroke-width="1.6" stroke-linejoin="round"></path>
+            <g id="gap-visits"></g>
+            <g class="fade" data-from="2">
+              <rect x="40" y="226" width="460" height="40" rx="10" fill="var(--bg-alt)"></rect>
+              <text x="56" y="250" style="font-size:12.5px;fill:var(--ink);font-weight:600">Reaches the clinician:</text>
+              <text x="204" y="250" style="font-size:12.5px">3 visits · the 362 days between stay on the wrist</text>
+            </g>
+          </svg>
+          <div class="legend"><span><i style="background:var(--ink)"></i>Clinic visit</span><span class="fade" data-from="1"><i style="background:var(--heart)"></i>Wearable, daily</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats band center" aria-labelledby="stats-h">
+  <div class="inner">
+    <p class="eyebrow">Why more alerts are not the answer</p>
+    <h2 class="headline" id="stats-h"><b>It's not what the model sees.</b> It's how it guides.</h2>
+    <div class="stat-grid">
+      <div class="stat rise">
+        <div class="num grad">11%</div>
+        <p>Of <b>264 patients</b> evaluated after an Apple Watch flagged an abnormal pulse, only 11% received a clinically actionable cardiovascular diagnosis.</p>
+        <p class="ref">Wyatt et al., JAMIA 2020</p>
+      </div>
+      <div class="stat rise">
+        <div class="num">92<span style="font-size:0.45em;color:var(--muted);letter-spacing:-0.02em"> vs </span><span class="grad">76</span></div>
+        <p><b>The team did worse than the AI alone.</b> GPT‑4 on its own reached a median diagnostic reasoning score of 92%. Physicians working with GPT‑4 scored 76%, barely above the 74% of physicians without it.</p>
+        <p class="ref">Goh et al., JAMA Network Open 2024</p>
+      </div>
+    </div>
+    <p class="note">What matters is what an assistant flags, when it steps in, and how it responds to the clinician's expertise.</p>
+  </div>
+</section>
+
+<!-- Scene 2: an assistant that knows when to ask -->
+<section class="scene band" id="approach" aria-labelledby="prop-h">
+  <div class="inner">
+    <div class="scene-head center">
+      <p class="eyebrow">My approach</p>
+      <h2 class="headline" id="prop-h"><b>AI that knows</b> when to ask.</h2>
+      <p class="sub">Whether it is an endoscopy frame, a recovery curve or a wearable signal, the same questions come up: what deserves attention, when to bring in a human, and how to show uncertainty so clinicians can push back. Here is that idea in one example.</p>
+    </div>
+    <div class="story" data-story="agent">
+      <div class="steps">
+        <div class="step" data-step="0"><div class="card"><span class="k">01 · Baseline</span><h3>Every patient is their own reference.</h3><p>The assistant learns a personal baseline, so a change means "unusual for you", not "unusual for the average person".</p></div></div>
+        <div class="step" data-step="1"><div class="card"><span class="k">02 · Change</span><h3>Resting heart rate rises for six days.</h3><p>It could be an infection. It could be harder training, or poor sleep. A naive system would fire an alert now.</p></div></div>
+        <div class="step" data-step="2"><div class="card"><span class="k">03 · Ask first</span><h3>The assistant asks for context.</h3><p>Instead of alerting, it chooses a follow-up question for the patient. Adaptive questioning should separate real concerns from ordinary life.</p></div></div>
+        <div class="step" data-step="3"><div class="card"><span class="k">04 · Involve</span><h3>The clinician can push back.</h3><p>When review is warranted, the assistant brings the evidence. The clinician can question it, ask for the raw measurements, or dismiss it. Dismissal isn't treated as proof the alert was wrong.</p></div></div>
+      </div>
+      <div class="stage">
+        <div class="panel" data-figure="agent" data-current="0">
+          <div class="panel-top"><b>Last 30 days</b><span>resting heart rate, bpm</span></div>
+          <svg class="chart" viewBox="0 0 520 300" role="img" aria-labelledby="agent-desc">
+            <desc id="agent-desc">Thirty days of resting heart rate around a personal baseline of 58 bpm, rising to about 66 bpm in the final six days.</desc>
+            <g id="agent-axis"></g>
+            <rect id="agent-band" fill="var(--band)"></rect>
+            <path id="agent-base" fill="none" stroke="var(--calm)" stroke-width="2"></path>
+            <rect id="agent-hl" class="fade" data-from="1" fill="var(--flag)" opacity="0.12" rx="6"></rect>
+            <path id="agent-rise" class="fade" data-from="1" fill="none" stroke="var(--heart)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <g id="agent-tag" class="fade" data-from="1"></g>
+          </svg>
+          <div class="legend"><span><i style="background:var(--calm)"></i>Personal baseline</span><span><i style="background:var(--heart)"></i>Change</span></div>
+          <div class="bubble ai fade" data-from="2"><small>Assistant</small>Your resting heart rate has been up for six days. Have you felt unwell, trained harder, or slept less?</div>
+          <div class="bubble pt fade" data-from="2"><small>Patient</small>No extra training. I've had a sore throat since Monday.</div>
+          <div class="bubble doc fade" data-from="3"><small>Clinician</small>Show me the nightly values and the sleep data before I decide.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="arms band center" id="questions" aria-labelledby="arms-h">
+  <div class="arms-pin">
+  <div class="inner">
+    <p class="eyebrow">Questions I care about</p>
+    <h2 class="headline" id="arms-h"><b>From a good model</b> to better care.</h2>
+    <p class="sub">Most clinical AI never makes it into routine practice. These are the questions I want to work on to change that.</p>
+    <div class="arm-track" aria-hidden="true"><span class="arm-dot"></span></div>
+    <div class="arm-grid">
+      <div class="arm on rise"><span class="lbl">Timing</span><h3>When should AI step in?</h3><p>Which findings deserve a clinician's attention, and which only create more alerts.</p></div>
+      <div class="arm rise"><span class="lbl">Uncertainty</span><h3>How should doubt be shown?</h3><p>Communicating uncertainty so clinicians can question a result instead of simply accepting it.</p></div>
+      <div class="arm rise"><span class="lbl">Practice</span><h3>Does it fit the workflow?</h3><p>Designing with clinicians from the start, so tools fit how care is actually delivered.</p></div>
+      <div class="arm rise"><span class="lbl">Evaluation</span><h3>Is the team better?</h3><p>Measuring whether clinician and AI together make better decisions, not just whether the model is accurate.</p></div>
+    </div>
+    <p class="note">A clinician agreeing with an AI is not proof the AI was right, and an accurate model is not proof it helps. Both need to be tested with the people who use it.</p>
+  </div>
+  </div>
+</section>
+
+<section class="abilities band center" aria-labelledby="ab-h">
+  <div class="inner">
+    <p class="eyebrow">What my projects taught me</p>
+    <h2 class="headline" id="ab-h"><b>Three abilities.</b> Three projects that taught them.</h2>
+    <div class="ab-grid" style="text-align:left">
+      <div class="ab rise"><div class="verb"><span>Explain</span>Show the measurements, not just the warning.</div><h4>Fairness in ICU foundation models</h4><p>Biomedical Informatics Group. A fairness metric suggested group differences in ICareFM, but much of it traced back to differences in event rates. A number is only as useful as its interpretation.</p></div>
+      <div class="ab rise"><div class="verb"><span>Ask</span>Know when to bring in an expert.</div><h4>Nasal polyp active learning</h4><p>ivia Lab &amp; University Hospital Zurich. The model finds the endoscopy frames it's unsure about and asks ENT clinicians to focus there. I lead the detection model and acquisition pipeline.</p></div>
+      <div class="ab rise"><div class="verb"><span>Communicate</span>Leave room for clinical judgment.</div><h4>Spinal cord injury dashboard</h4><p>BMDS Lab &amp; Schulthess Klinik. Comparing a patient's recovery with similar patients showed me how a useful estimate misleads when its uncertainty isn't clear.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="work band" id="work" aria-labelledby="work-h">
+  <div class="inner">
+    <div class="center">
+      <p class="eyebrow">Experience</p>
+      <h2 class="headline" id="work-h"><b>Between statistics,</b> models and the clinic.</h2>
+    </div>
+    <ul class="tl">
+      <li><span class="when">Sep 2026 – now</span><div><h3>Research Assistant &amp; Project Lead, Nasal Polyp Active Learning</h3><div class="org">ivia Lab, ETH Zürich &amp; University Hospital Zurich</div><p>Detection model and active-learning pipeline, including acquisition functions and evaluation, with ENT clinicians.</p></div></li>
+      <li><span class="when">Sep 2026 – now</span><div><h3>Spinal Cord Injury Decision Support</h3><div class="org">BMDS Lab, ETH Zürich &amp; Schulthess Klinik</div><p>Developing a clinical dashboard built on CNN recovery predictions and patient clustering, and evaluating its usability, interpretability and clinical value with clinicians.</p></div></li>
+      <li><span class="when">Mar – Sep 2026</span><div><h3>Fairness in ICU Foundation Models</h3><div class="org">Biomedical Informatics Group, ETH Zürich</div><p>Analysed demographic fairness in ICareFM and how event prevalence drives group disparities.</p></div></li>
+      <li><span class="when">Feb 2026 – now</span><div><h3>GNN-VIEW research collaboration</h3><div class="org">ivia Lab, ETH Zürich · with SMHI and ECMWF</div><p>Visualisations and experiments for graph-based weather models; ECMWF training materials.</p></div></li>
+      <li><span class="when">Apr – Sep 2025</span><div><h3>Data Science Intern, AI &amp; Data-Driven Development</h3><div class="org">AUDI AG, Ingolstadt</div><p>ML pipelines and FastAPI services, including RAG-based classification and workflow automation.</p></div></li>
+      <li><span class="when">2023 – 2025</span><div><h3>Research Assistant, Information Systems &amp; Business Analytics</h3><div class="org">University of Würzburg</div><p>Graph neural networks on spatiotemporal logistics data and generalisation under distribution shift.</p></div></li>
+    </ul>
+
+    <h2 class="sec-title center"><b>Selected</b> publications</h2>
+    <div class="pubs">
+      <div class="pub"><span class="venue">NeurIPS 2026 Workshop · Representation Learning for Earth Observation</span><h3>GNN-VIEW: Visual Inspection and Explanation of Graph-based Earth-System Models</h3><p>A. Lucatelli, F. Unterhuber, <b>K. Krenzer</b>, M. El-Assady, B. Soja, C. Humer, J. Oskarsson · Accepted</p></div>
+      <div class="pub"><span class="venue">vis4climate Workshop · IEEE VIS 2026</span><h3>GNN-VIEW: Visual Inspection and Explanation of GNN-based Weather Models</h3><p>A. Lucatelli, F. Unterhuber, <b>K. Krenzer</b>, L. Kummer, J. Oskarsson, C. Humer · Accepted</p></div>
+    </div>
+
+    <h2 class="sec-title center"><b>Education</b></h2>
+    <ul class="tl">
+      <li><span class="when">2025 – 2027</span><div><h3>M.Sc. Statistics</h3><div class="org">ETH Zürich</div><p>Machine learning for healthcare, interactive visualisation and clinical decision support.</p></div></li>
+      <li><span class="when">2022 – 2025</span><div><h3>B.Sc. Economics &amp; Computer Science</h3><div class="org">University of Würzburg · exchange at NHH, Norway</div><p>Graduated best in cohort in five semesters. Dean's List, top 3%.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="people band" id="people" aria-labelledby="people-h">
+  <div class="inner people-grid">
+    <div>
+      <div class="photo rise"><img src="sunset.jpg" alt="Two students in ETH Zürich Statistics hoodies watching a sunset over green hills" width="1400" height="1867" loading="lazy"></div>
+      <p class="caption">The ETH Statistics hoodies, from first sketch to final order.</p>
+    </div>
+    <div class="people-copy">
+      <p class="eyebrow">Beyond research</p>
+      <h2 class="headline" id="people-h"><b>I like bringing</b> people together.</h2>
+      <p>As one of six elected <b>student representatives</b> in ETH's Statistics programme, I organise weekend trips, swims in the Limmat and events for the few women in our cohort.</p>
+      <p>I also designed the <b>Statistics hoodies</b> in the photo and took them from the first sketch all the way to ordering, which taught me how much coordination it takes to turn an idea into something people actually use.</p>
+      <p>Next, I'd love to start a weekly <b>community run</b>. It's a simple way to bring together people who rarely meet, and those of us who work on health should take care of our own.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wellbeing band" id="wellbeing" aria-labelledby="well-h">
+  <div class="inner well-grid">
+    <div class="well-copy">
+      <p class="eyebrow">Wellbeing</p>
+      <h2 class="headline" id="well-h"><b>Health starts long before</b> the clinic.</h2>
+      <p>Most of what keeps us well happens far away from a hospital: moving every day, eating good food, sleeping enough and spending time outside. It's the same everyday life that wearables capture, and the best clinical visit is the one you never need.</p>
+      <p>It's also where I recharge. I run marathons, lift and train calisthenics (the human flag is next), and I'm happiest outdoors, like on my trip through Australia.</p>
+      <p>Sunlight is part of it too. Daylight helps set our internal clock, which shapes how well we sleep, and an hour of golden evening sun on a porch is still my favourite way to end a day.</p>
+      <div class="hobbies"><span>Marathon running</span><span>Strength &amp; calisthenics</span><span>Good food</span><span>Time outside</span><span>Piano</span><span>Painting</span></div>
+    </div>
+    <div class="well-photos">
+      <figure class="wp wp-a rise"><img src="rainforest.jpg" alt="Katharina hanging from a rainforest vine in Australia, laughing" width="1000" height="1333" loading="lazy"><figcaption>Rainforest, Australia</figcaption></figure>
+      <figure class="wp wp-b rise"><img src="porch.jpg" alt="Katharina on a porch swing in golden evening light" width="1000" height="1333" loading="lazy"><figcaption>Golden hour, the best way to end a day</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="contact band center" id="contact" aria-labelledby="contact-h">
+  <div class="narrow">
+    <h2 class="display" id="contact-h"><b>Let's</b> talk.</h2>
+    <p class="sub">Research collaborations, clinical AI, wearable data and PhD opportunities.</p>
+    <div class="cta">
+      <span class="addr" id="email">kkrenzer@student.ethz.ch</span>
+      <button class="btn" id="copy-email" type="button">Copy email</button>
+      <a class="btn ghost" href="Katharina_Alicia_Krenzer_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+    </div>
+    <div class="cta" style="margin-top:14px">
+      <a href="https://www.linkedin.com/in/katharina-alicia-krenzer-58485b323" target="_blank" rel="noopener">LinkedIn ›</a>
+      <a href="https://github.com/kathalikren" target="_blank" rel="noopener">GitHub ›</a>
+    </div>
+    <div class="refs">
+      <span>References: Goh et al., JAMA Netw Open, 2024 · Wyatt et al., JAMIA 27(9), 2020.</span>
+      <span>Patient and clinician dialogue on this page is illustrative.</span>
+    </div>
+  </div>
+</section>
+
+<footer class="band"><div class="inner"><span>Katharina Alicia Krenzer · Zürich</span><span>Updated November 2026</span></div></footer>
+
+<script>
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  function rng(seed) { return function () { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; }
+
+  // Shared plot frame
+  var X0 = 40, X1 = 500, Y0 = 20, Y1 = 200;
+  function axis(g, lo, hi, ticks, xlabels) {
+    ticks.forEach(function (v) {
+      var y = Y1 - (v - lo) / (hi - lo) * (Y1 - Y0);
+      el('line', { x1: X0, x2: X1, y1: y, y2: y, stroke: 'var(--line)', 'stroke-width': 1 }, g);
+      var t = el('text', { x: X0 - 8, y: y + 4, 'text-anchor': 'end' }, g); t.textContent = v;
+    });
+    xlabels.forEach(function (p) { var t = el('text', { x: p[0], y: Y1 + 18, 'text-anchor': 'middle' }, g); t.textContent = p[1]; });
+  }
+
+  // Scene 1: a year of resting HR, 3 clinic visits
+  (function () {
+    var r = rng(7), lo = 50, hi = 72, pts = [], v = 58;
+    for (var d = 0; d < 365; d++) {
+      v += (58 - v) * 0.15 + (r() - 0.5) * 2.4;
+      if (d > 140 && d < 150) v += 0.9;
+      if (d > 280 && d < 288) v += 0.7;
+      pts.push(v);
+    }
+    var sx = function (d) { return X0 + d / 364 * (X1 - X0); }, sy = function (val) { return Y1 - (val - lo) / (hi - lo) * (Y1 - Y0); };
+    axis(document.getElementById('gap-axis'), lo, hi, [52, 60, 68], [[sx(0), 'Jan'], [sx(90), 'Apr'], [sx(181), 'Jul'], [sx(273), 'Oct'], [sx(364), 'Dec']]);
+    document.getElementById('gap-line').setAttribute('d', pts.map(function (p, i) { return (i ? 'L' : 'M') + sx(i).toFixed(1) + ' ' + sy(p).toFixed(1); }).join(''));
+    var g = document.getElementById('gap-visits');
+    [[40, 'GP'], [200, 'Check-up'], [330, 'Clinic']].forEach(function (vd) {
+      var x = sx(vd[0]), y = sy(pts[vd[0]]);
+      el('line', { x1: x, x2: x, y1: Y0, y2: Y1, stroke: 'var(--ink)', 'stroke-width': 1, 'stroke-dasharray': '2 4', opacity: 0.35 }, g);
+      el('circle', { cx: x, cy: y, r: 6.5, fill: 'var(--ink)', stroke: 'var(--card)', 'stroke-width': 2.5 }, g);
+      var t = el('text', { x: x, y: Y0 - 6, 'text-anchor': 'middle', style: 'fill:var(--ink);font-weight:600' }, g); t.textContent = vd[1];
+    });
+  })();
+
+  // Scene 2: 30 days, rise over the last 6
+  (function () {
+    var r = rng(21), lo = 50, hi = 70, pts = [];
+    for (var d = 0; d < 30; d++) {
+      var base = 58 + (r() - 0.5) * 2.6;
+      if (d >= 24) base = 58 + (d - 23) * 1.35 + (r() - 0.5) * 1.2;
+      pts.push(base);
+    }
+    var sx = function (d) { return X0 + d / 29 * (X1 - X0); }, sy = function (val) { return Y1 - (val - lo) / (hi - lo) * (Y1 - Y0); };
+    axis(document.getElementById('agent-axis'), lo, hi, [52, 58, 64, 70], [[sx(0), 'Day 1'], [sx(9), 'Day 10'], [sx(19), 'Day 20'], [sx(29), 'Day 30']]);
+    var band = document.getElementById('agent-band');
+    band.setAttribute('x', X0); band.setAttribute('width', X1 - X0); band.setAttribute('y', sy(60.5)); band.setAttribute('height', sy(55.5) - sy(60.5));
+    var path = function (from, to) { var s = ''; for (var i = from; i <= to; i++) s += (i === from ? 'M' : 'L') + sx(i).toFixed(1) + ' ' + sy(pts[i]).toFixed(1); return s; };
+    document.getElementById('agent-base').setAttribute('d', path(0, 23));
+    document.getElementById('agent-rise').setAttribute('d', path(23, 29));
+    var hl = document.getElementById('agent-hl');
+    hl.setAttribute('x', sx(23) - 6); hl.setAttribute('width', sx(29) - sx(23) + 12); hl.setAttribute('y', Y0); hl.setAttribute('height', Y1 - Y0);
+    var tag = document.getElementById('agent-tag');
+    var ex = sx(29), ey = sy(pts[29]);
+    el('circle', { cx: ex, cy: ey, r: 5, fill: 'var(--heart)', stroke: 'var(--card)', 'stroke-width': 2 }, tag);
+    var t = el('text', { x: sx(23) - 10, y: Y0 + 14, 'text-anchor': 'end', style: 'fill:var(--ink);font-weight:600;font-size:12px' }, tag);
+    t.textContent = '+' + Math.round(pts[29] - 58) + ' bpm vs. baseline';
+  })();
+
+  // Step activation
+  function setStep(fig, n) {
+    fig.setAttribute('data-current', n);
+    fig.querySelectorAll('[data-from]').forEach(function (e) { e.classList.toggle('on', +e.getAttribute('data-from') <= n); });
+  }
+  var stories = [];
+  document.querySelectorAll('[data-story]').forEach(function (story) {
+    var fig = story.querySelector('[data-figure]');
+    var steps = story.querySelectorAll('.step');
+    setStep(fig, 0); steps[0].classList.add('active');
+    stories.push({ fig: fig, steps: steps, current: 0 });
+  });
+  // A step starts when its card's centre reaches the reading line, so the chat bubbles arrive with the card
+  function syncSteps() {
+    var vh = window.innerHeight;
+    var line = window.matchMedia('(max-width: 760px)').matches ? 0.72 : 0.62;
+    stories.forEach(function (st) {
+      var n = 0;
+      st.steps.forEach(function (stp) {
+        var c = stp.querySelector('.card').getBoundingClientRect();
+        if ((c.top + c.bottom) / 2 < vh * line) n = +stp.getAttribute('data-step');
+      });
+      if (n !== st.current) {
+        st.current = n;
+        st.steps.forEach(function (stp) { stp.classList.toggle('active', +stp.getAttribute('data-step') === n); });
+        setStep(st.fig, n);
+      }
+    });
+  }
+  var stepTick = false;
+  window.addEventListener('scroll', function () { if (!stepTick) { stepTick = true; requestAnimationFrame(function () { stepTick = false; syncSteps(); }); } }, { passive: true });
+  window.addEventListener('resize', syncSteps);
+  syncSteps();
+
+  // Cards stay fully visible while in the reading zone and fade only once they rise near the top
+  var cards = document.querySelectorAll('.step .card');
+  var ticking = false;
+  function fadeCards() {
+    ticking = false;
+    var vh = window.innerHeight;
+    var narrow = window.matchMedia('(max-width: 760px)').matches;
+    var top = narrow ? 0.42 : 0.12, bottom = 0.92;
+    cards.forEach(function (c) {
+      var r = c.getBoundingClientRect();
+      var mid = (r.top + r.bottom) / 2 / vh;
+      var o = 1;
+      if (mid < top) o = Math.max(0.35, 1 - (top - mid) / 0.18 * 0.65);
+      else if (mid > bottom) o = Math.max(0.35, 1 - (mid - bottom) / 0.18 * 0.65);
+      c.style.opacity = o.toFixed(2);
+    });
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(fadeCards); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  fadeCards();
+
+  // Always open at the top on reload, even after a menu link added a #section to the address
+  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+  function toTop() { try { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); } catch (e) { window.scrollTo(0, 0); } }
+  try { if (location.hash) history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+  toTop();
+  window.addEventListener('load', function () { toTop(); setTimeout(toTop, 60); });
+  window.addEventListener('pageshow', toTop);
+
+  // The red dot: follows reading progress down the page, then walks across the four questions
+  var rail = document.querySelector('.rail'), railDot = rail && rail.querySelector('.rail-dot');
+  var arms = document.getElementById('questions');
+  var armCards = arms ? arms.querySelectorAll('.arm') : [];
+  var track = arms && arms.querySelector('.arm-track'), armDot = track && track.querySelector('.arm-dot');
+  var activeArm = 0;
+  function setArm(i) {
+    if (i === activeArm) return;
+    activeArm = i;
+    armCards.forEach(function (c, k) { c.classList.toggle('on', k === i); });
+  }
+  function dotUpdate() {
+    var vh = window.innerHeight;
+    var max = document.documentElement.scrollHeight - vh;
+    if (railDot) railDot.style.top = ((max > 0 ? window.scrollY / max : 0) * 100).toFixed(2) + '%';
+    if (!arms || !armCards.length) return;
+    var r = arms.getBoundingClientRect();
+    var inside = r.top < vh * 0.55 && r.bottom > vh * 0.45;
+    if (rail) rail.classList.toggle('hide', inside);
+    var pinned = window.matchMedia('(min-width: 761px) and (min-height: 700px)').matches;
+    if (pinned && track && armDot) {
+      var q = Math.min(1, Math.max(0, (-r.top) / Math.max(1, r.height - vh)));
+      var tr = track.getBoundingClientRect();
+      var centers = Array.prototype.map.call(armCards, function (c) { var b = c.getBoundingClientRect(); return (b.left + b.right) / 2 - tr.left; });
+      var pos = q * (centers.length - 1), k = Math.floor(pos), f = pos - k;
+      var x = k >= centers.length - 1 ? centers[centers.length - 1] : centers[k] + (centers[k + 1] - centers[k]) * f;
+      armDot.style.left = x.toFixed(1) + 'px';
+      setArm(Math.min(centers.length - 1, Math.round(pos)));
+    } else {
+      var best = 0, bd = Infinity;
+      armCards.forEach(function (c, k) { var b = c.getBoundingClientRect(); var d = Math.abs((b.top + b.bottom) / 2 - vh * 0.5); if (d < bd) { bd = d; best = k; } });
+      setArm(best);
+    }
+  }
+  var dotTick = false;
+  window.addEventListener('scroll', function () { if (!dotTick) { dotTick = true; requestAnimationFrame(function () { dotTick = false; dotUpdate(); }); } }, { passive: true });
+  window.addEventListener('resize', dotUpdate);
+  dotUpdate();
+
+  // Gentle lift on reveal (content stays visible at rest)
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var rises = document.querySelectorAll('.rise');
+    var vh = window.innerHeight;
+    var rio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove('pre'); rio.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    rises.forEach(function (n) { if (n.getBoundingClientRect().top > vh) { n.classList.add('pre'); rio.observe(n); } });
+  }
+
+  // Copy email
+  var btn = document.getElementById('copy-email'), addr = document.getElementById('email');
+  function sel() { var rg = document.createRange(); rg.selectNodeContents(addr); var s = getSelection(); s.removeAllRanges(); s.addRange(rg); }
+  btn.addEventListener('click', function () {
+    var ok = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 1800); };
+    try { navigator.clipboard.writeText(addr.textContent).then(ok, function () { sel(); btn.textContent = 'Press ⌘C'; }); }
+    catch (e) { sel(); btn.textContent = 'Press ⌘C'; }
+  });
+})();
+</script>
+
+</body>
+</html>
